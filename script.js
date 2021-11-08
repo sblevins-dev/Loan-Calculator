@@ -49,12 +49,11 @@ CALCULATE.addEventListener('click', (e) => {
     // Cals calculate function
     let monthlyPayment = calculateLoan(cost, loanLength, intRate);
 
-    RESULT_CONTAINER.classList.add('active');
 
     // Enter results into DOM
     if (!isNaN(monthlyPayment)) {
-            RESULT.textContent = `Your monthly payment before home insurance and property taxes is $${monthlyPayment}`
-
+        RESULT_CONTAINER.classList.add('active');
+        RESULT.textContent = `Your monthly payment before home insurance and property taxes is $${monthlyPayment}`
     }
 })
 
