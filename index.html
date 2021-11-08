@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Loan Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <form class="form" action="/">
+        <fieldset class="loan-ammount">
+          <label for="loanAmmount">Loan Ammount: </label>
+          <label for="loanAmmount" id="ammount">$0</label>
+          <input
+            type="range"
+            id="loan-ammount"
+            name="loanAmmount"
+            value="0"
+            min="0"
+            max="1000000"
+            onchange="myFunction(this.value)"
+            oninput="myFunction(this.value)"
+          />
+        </fieldset>
+
+        <fieldset class="loan-length">
+          <label for="loanLength">Loan Length: </label>
+          <div class="radio">
+            <input type="radio" id="fifteen" name="loanLength" value="15" />
+            <label for="fifteen">15 Years</label>
+
+            <input
+              type="radio"
+              id="thirty"
+              name="loanLength"
+              value="30"
+              checked
+            />
+            <label for="thirty">30 Years</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="int-rate">
+          <label for="intRate">Interest Rate: </label>
+          <input
+            type="number"
+            id="int-rate"
+            name="intRate"
+            step="0.25"
+            min=".00"
+            max="5"
+            required
+          />
+        </fieldset>
+        <button class="submit-button" type="submit">Calculate</button>
+
+        <!-- <div class="results">
+          <div class="monthly-payment"></div>
+        </div> -->
+      </form>
+      <div class="results-container">
+        <div class="exit-button">X</div>
+        <div class="results"></div>
+      </div>
+     
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
